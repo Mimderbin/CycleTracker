@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4F19B269-9C95-4D35-ACF7-3739235AD623}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{E6FDEEB0-899A-4EE5-B461-1188B8E7BDAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{7EBBF184-685B-426E-B9CA-BF1BC8FD3E31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6FDEEB0-899A-4EE5-B461-1188B8E7BDAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FDEEB0-899A-4EE5-B461-1188B8E7BDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FDEEB0-899A-4EE5-B461-1188B8E7BDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FDEEB0-899A-4EE5-B461-1188B8E7BDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBBF184-685B-426E-B9CA-BF1BC8FD3E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBBF184-685B-426E-B9CA-BF1BC8FD3E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBBF184-685B-426E-B9CA-BF1BC8FD3E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBBF184-685B-426E-B9CA-BF1BC8FD3E31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
