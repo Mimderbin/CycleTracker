@@ -36,9 +36,5 @@
     ports:
       - "5001:8080"
 volumes:
-  sqlvolume:  api-1:
-    image: api-1
-    build:
-      context: .
-      dockerfile: API/Dockerfile
+  sqlvolume: {}
 
