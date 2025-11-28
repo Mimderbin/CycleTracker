@@ -57,7 +57,7 @@ public abstract class CrudController<T>(AppDbContext context) : ODataController
 
 
     // -------------------------------------------------------
-    // PATCH (partial update) — safest version
+    // PATCH
     // -------------------------------------------------------
     public virtual async Task<IActionResult> Patch(
         [FromODataUri] int key,

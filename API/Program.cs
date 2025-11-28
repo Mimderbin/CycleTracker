@@ -1,5 +1,6 @@
 using API.Data;
 using API.Models;
+using API.Services;
 using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OData.Edm;
@@ -13,6 +14,8 @@ builder.Services.AddControllers()
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPkService, PkService>();
 
 var app = builder.Build();
 app.MapControllers();
@@ -28,12 +31,10 @@ static IEdmModel GetEdmModel()
 
     // Navigation exposure (optional)
     builder.EntityType<Cycle>()
-        .HasMany(c => c.DoseEvents)
-        .Contained();
+        .HasMany(c => c.DoseEvents);
 
     builder.EntityType<Compound>()
-        .HasMany(c => c.DoseEvents)
-        .Contained();
+        .HasMany(c => c.DoseEvents);
 
     return builder.GetEdmModel();
 }

@@ -10,5 +10,5 @@ public class Cycle
     public string? Notes { get; set; }
 
     // Navigation
-    public ICollection<DoseEvent> DoseEvents { get; set; } = new List<DoseEvent>();
+    public ICollection<DoseEvent>? DoseEvents { get; set; } = new List<DoseEvent>();
 }

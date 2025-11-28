@@ -11,6 +11,6 @@ public class DoseEvent
     public string? Notes { get; set; }
 
     // Navigation
-    public Cycle Cycle { get; set; } = null!;
-    public Compound Compound { get; set; } = null!;
+    public Cycle? Cycle { get; set; } = null!;
+    public Compound? Compound { get; set; } = null!;
 }
