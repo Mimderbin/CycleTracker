@@ -30,7 +30,7 @@
       context: .
       dockerfile: WebUI/Dockerfile
     environment:
-      ApiBaseUrl: "http://api:5000/odata/"
+      ApiBaseUrl: "http://api:5000/odata"
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_URLS: "http://+:8080"
     ports:

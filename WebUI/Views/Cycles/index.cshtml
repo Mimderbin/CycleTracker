@@ -1,0 +1,29 @@
+﻿@model List<WebUI.Models.CycleDto>
+
+<h2>Cycles</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Start</th>
+        <th>End</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Id</td>
+            <td>@c.Name</td>
+            <td>@c.StartDate.ToShortDateString()</td>
+            <td>@c.EndDate?.ToShortDateString()</td>
+            <td>
+                <a asp-controller="Cycles" asp-action="Details" asp-route-id="@c.Id">Details</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

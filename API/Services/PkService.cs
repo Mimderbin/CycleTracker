@@ -1,6 +1,6 @@
 ﻿using API.Data;
 using API.DTOs;
-using API.Services;
+using API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 public class PkService : IPkService

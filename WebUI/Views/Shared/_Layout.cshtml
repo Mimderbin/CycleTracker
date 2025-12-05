@@ -29,8 +29,30 @@
                 </ul>
             </div>
         </div>
+        <button id="aiToggleBtn" class="btn btn-primary" style="position:fixed;top:20px;right:20px;z-index:9999;">
+            AI 💬
+        </button>
     </nav>
 </header>
+<div id="aiPanel" style="
+    position:fixed;
+    top:0;
+    right:-400px;
+    width:400px;
+    height:100vh;
+    background:white;
+    border-left: 1px solid #ddd;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index:9998;
+    padding:20px;
+    transition:right 0.3s ease;">
+
+    <h4>AI Assistant</h4>
+    <div id="aiMessages" style="height:80%; overflow-y:auto; margin-bottom:10px"></div>
+
+    <textarea id="aiInput" class="form-control" placeholder="Ask something..."></textarea>
+    <button id="aiSendBtn" class="btn btn-success mt-2">Send</button>
+</div>
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
@@ -46,5 +68,6 @@
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
+<script src="~/js/ai-chat.js"></script>
 </body>
 </html>

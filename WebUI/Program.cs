@@ -1,7 +1,17 @@
+using System.Text.Json;
+using WebUI.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient("api", client =>
+{
+    client.BaseAddress = new Uri("http://api:5000/");
+});
+
+builder.Services.Configure<OpenRouterConfig>(builder.Configuration.GetSection("OpenRouter"));
 
 var app = builder.Build();
 

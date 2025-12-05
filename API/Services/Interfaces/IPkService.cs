@@ -1,6 +1,6 @@
 ﻿using API.DTOs;
 
-namespace API.Services;
+namespace API.Services.Interfaces;
 
 public interface IPkService
 {
