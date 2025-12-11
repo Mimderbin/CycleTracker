@@ -1,5 +1,6 @@
-using System.Text.Json;
+using System.Globalization;
 using WebUI.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,10 @@ builder.Services.AddHttpClient("api", client =>
 });
 
 builder.Services.Configure<OpenRouterConfig>(builder.Configuration.GetSection("OpenRouter"));
+
+var culture = new CultureInfo("en-US");
+CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentUICulture = culture;
 
 var app = builder.Build();
 

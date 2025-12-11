@@ -1,9 +1,7 @@
 ﻿using API.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
-
-using API.Data;
-using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/[controller]")]

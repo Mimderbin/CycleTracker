@@ -39,7 +39,7 @@ public abstract class CrudController<T>(AppDbContext context) : ODataController
     // -------------------------------------------------------
     // POST (create)
     // -------------------------------------------------------
-    public virtual async Task<IActionResult> Post([FromBody] T entity, CancellationToken ct)
+    public virtual async Task<IActionResult> Post([FromBody] T? entity, CancellationToken ct)
     {
         if (entity == null)
             return BadRequest("Request body is missing.");
@@ -61,7 +61,7 @@ public abstract class CrudController<T>(AppDbContext context) : ODataController
     // -------------------------------------------------------
     public virtual async Task<IActionResult> Patch(
         [FromODataUri] int key,
-        [FromBody] Delta<T> patch,
+        [FromBody] Delta<T>? patch,
         CancellationToken ct)
     {
         if (patch == null)

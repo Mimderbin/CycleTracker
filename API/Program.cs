@@ -34,16 +34,17 @@ static IEdmModel GetEdmModel()
 {
     var builder = new ODataConventionModelBuilder();
 
+    builder.EntityType<Compound>().HasKey(c => c.Id);
+    builder.EntityType<Cycle>().HasKey(c => c.Id);
+    builder.EntityType<DoseEvent>().HasKey(d => d.Id);
+
     builder.EntitySet<Compound>("Compounds");
     builder.EntitySet<Cycle>("Cycles");
     builder.EntitySet<DoseEvent>("DoseEvents");
 
-    // Navigation exposure (optional)
-    builder.EntityType<Cycle>()
-        .HasMany(c => c.DoseEvents);
-
-    builder.EntityType<Compound>()
-        .HasMany(c => c.DoseEvents);
+    builder.EntityType<Cycle>().HasMany(c => c.DoseEvents);
+    builder.EntityType<Compound>().HasMany(c => c.DoseEvents);
 
     return builder.GetEdmModel();
+
 }

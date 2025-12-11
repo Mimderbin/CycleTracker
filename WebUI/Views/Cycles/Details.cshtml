@@ -41,6 +41,20 @@
 
 <h3>Blood Levels</h3>
 <canvas id="pkChart" width="800" height="300"></canvas>
+<p>
+    <b>Start:</b> @cycle.StartDate.ToShortDateString() <br />
+    <b>End:</b> @(cycle.EndDate?.ToShortDateString() ?? "Ongoing") <br />
+    <b>Type:</b> @cycle.Type
+</p>
+
+<p>
+    <a asp-controller="Cycles"
+       asp-action="AddDose"
+       asp-route-cycleId="@cycle.Id"
+       class="btn btn-sm btn-primary">
+        Add Dose
+    </a>
+</p>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

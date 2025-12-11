@@ -1,0 +1,44 @@
+﻿@model WebUI.Models.DoseEventCreateViewModel
+
+@{
+    var cycle = ViewBag.Cycle as WebUI.Models.CycleDto;
+    ViewData["Title"] = "Add Dose";
+}
+
+<h2>Add dose to @cycle!.Name</h2>
+
+<form asp-action="AddDose" method="post">
+    <input type="hidden" asp-for="CycleId" />
+
+    <div class="mb-3">
+        <label asp-for="CompoundId" class="form-label"></label>
+        <select asp-for="CompoundId" class="form-select">
+            <option value="">-- Select compound --</option>
+            @foreach (var c in Model.Compounds)
+            {
+                <option value="@c.Id">@c.Name</option>
+            }
+        </select>
+        <span asp-validation-for="CompoundId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="AmountMg" class="form-label"></label>
+        <input asp-for="AmountMg" class="form-control" />
+        <span asp-validation-for="AmountMg" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Timestamp" class="form-label"></label>
+        <input asp-for="Timestamp" class="form-control" type="datetime-local"
+               value="@Model.Timestamp.ToString("yyyy-MM-ddTHH:mm")" />
+        <span asp-validation-for="Timestamp" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Details" asp-route-id="@Model.CycleId" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
